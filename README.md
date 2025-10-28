@@ -1,6 +1,6 @@
 # Ultrasonic SONAR-Based Object Localization & Drawing Pen System
 
-This project implements a **40 kHz ultrasonic SONAR-based localization system** capable of detecting the position of an object in 2-D space with approximately **5 mm – 1 cm accuracy**.  
+This project implements a **40 kHz ultrasonic SONAR-based localization system** capable of detecting the position of an object in 2-D space with approximately **1 mm – 1 mm accuracy**.  
 A custom **drawing pen mechanism** physically draws according to the detected coordinates.
 
 The system continuously senses the object’s position using multiple receivers, performs triangulation, and visualizes the location on a terminal and LCD.
@@ -12,7 +12,7 @@ The system continuously senses the object’s position using multiple receivers,
 - 40 kHz ultrasonic transmitter
 - Multi-receiver localization using triangulation
 - Real-time 2-D coordinate measurement
-- ~5 mm localization accuracy
+- ~(1,1) mm localization accuracy
 - Drawing pen that traces path based on detected coordinates
 - EEPROM-based configuration storage
 - Shell command interface
@@ -48,7 +48,7 @@ The system continuously senses the object’s position using multiple receivers,
 ### Triangulation
 
 Coordinates are computed from time-of-flight data from multiple receivers.  
-Error tolerance is ~**5 mm per axis**, depending on calibrated geometry.
+Error tolerance is ~**1 mm per axis**, depending on calibrated geometry.
 
 ---
 
