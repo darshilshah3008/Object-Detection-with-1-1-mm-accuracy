@@ -4,7 +4,7 @@
 
 SHELL = cmd.exe
 
-CG_TOOL_ROOT := C:/ti/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS
+CG_TOOL_ROOT := C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS
 
 GEN_OPTS__FLAG := 
 GEN_CMDS__FLAG := 
@@ -129,40 +129,27 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-CSE5342_Drawing.out \
+Object-Detection-with-1-1-mm-accuracy.out \
 
 EXE_OUTPUTS__QUOTED += \
-"CSE5342_Drawing.out" \
-
-BIN_OUTPUTS += \
-CSE5342_Drawing.hex \
-
-BIN_OUTPUTS__QUOTED += \
-"CSE5342_Drawing.hex" \
+"Object-Detection-with-1-1-mm-accuracy.out" \
 
 
 # All Target
 all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "CSE5342_Drawing.out"
+	@$(MAKE) --no-print-directory -Onone "Object-Detection-with-1-1-mm-accuracy.out"
 
 # Tool invocations
-CSE5342_Drawing.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+Object-Detection-with-1-1-mm-accuracy.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: Arm Linker'
-	"C:/ti/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"CSE5342_Drawing.map" --heap_size=0 --stack_size=4096 -i"C:/ti/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/lib" -i"C:/ti/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="CSE5342_Drawing_linkInfo.xml" --rom_model -o "CSE5342_Drawing.out" $(ORDERED_OBJS)
+	"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --define=ccs="ccs" --define=PART_TM4C123GH6PM -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi -z -m"Object-Detection-with-1-1-mm-accuracy.map" --heap_size=0 --stack_size=512 -i"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" -i"C:/ti/ccs1220/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="Object-Detection-with-1-1-mm-accuracy_linkInfo.xml" --rom_model -o "Object-Detection-with-1-1-mm-accuracy.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
-	@echo ' '
-
-CSE5342_Drawing.hex: $(EXE_OUTPUTS)
-	@echo 'Building secondary target: "$@"'
-	@echo 'Invoking: Arm Hex Utility'
-	"C:/ti/ccs1120/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/bin/armhex" --diag_wrap=off -o "CSE5342_Drawing.hex" $(EXE_OUTPUTS__QUOTED)
-	@echo 'Finished building secondary target: "$@"'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
+	-$(RM) $(EXE_OUTPUTS__QUOTED)
 	-$(RM) "clock.obj" "eeprom.obj" "gpio.obj" "i2c0.obj" "i2c0_lcd.obj" "main.obj" "nvic.obj" "tm4c123gh6pm_startup_ccs.obj" "uart0.obj" "wait.obj" 
 	-$(RM) "clock.d" "eeprom.d" "gpio.d" "i2c0.d" "i2c0_lcd.d" "main.d" "nvic.d" "tm4c123gh6pm_startup_ccs.d" "uart0.d" "wait.d" 
 	-@echo 'Finished clean'
